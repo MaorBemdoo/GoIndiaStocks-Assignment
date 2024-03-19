@@ -7,7 +7,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
+    screens: {
+      desktop: {min: '566px'},
+      mobile: {max: '566px'},
     },
   },
   plugins: [require("daisyui")],
