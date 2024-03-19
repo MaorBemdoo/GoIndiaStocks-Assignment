@@ -17,6 +17,9 @@
         @apply columns-2 gap-4 px-4 pt-2;
     }
     .responsive-tabs > input{
-        @apply text-red-700 text-2xl font-bold bg-slate-300 cursor-text !w-fit;
+        @apply text-red-700 text-lg font-bold bg-slate-300 cursor-text !w-fit;
+    }
+    .responsive-tabs > input:first-child{
+        @apply text-2xl;
     }
 }

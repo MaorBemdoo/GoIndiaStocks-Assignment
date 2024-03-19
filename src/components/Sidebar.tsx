@@ -23,7 +23,7 @@ const Sidebar = () => {
     }
 
     return (
-        <motion.aside className="bg-slate-300 h-screen text-white flex w-[30%]" initial={{marginLeft: "-28.5%"}} variants={{open: {marginLeft: 0}, close: {marginLeft: "-28.5%"}}} animate={controls}>
+        <motion.aside className="mobile:fixed bg-slate-300 h-screen text-white flex w-[30%] z-10 mobile:w-[70%]" initial={{marginLeft: "-28.5%"}} variants={{open: {marginLeft: 0}, close: {marginLeft: "-28.5%"}}} animate={controls}>
             <div className="bg-blue-950 basis-[95%]">
                 <div className="flex justify-between items-center border-b border-slate-300 px-8 py-4">
                     <div className="flex items-center gap-3">
