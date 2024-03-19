@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { BiSolidDollarCircle, BiSolidMessageDetail } from "react-icons/bi";
-import { FaUser } from "react-icons/fa6";
+import { FaCaretRight, FaUser } from "react-icons/fa6";
 import { IoIosNotifications } from "react-icons/io";
 
 const Sidebar = () => {
@@ -10,8 +10,8 @@ const Sidebar = () => {
     const [checkedId, setCheckedId] = useState("discussion-forum")
 
     return (
-        <aside className="bg-slate-300 h-screen text-white w-[30%]">
-            <div className="relative h-full bg-blue-950">
+        <aside className="bg-slate-300 h-screen text-white flex w-[30%]">
+            <div className="bg-blue-950 basis-[95%]">
                 <div className="flex justify-between items-center border-b border-slate-300 px-8 py-4">
                     <div className="flex items-center gap-3">
                         <FaUser className="w-[35px] h-[35px] rounded-b-full" />
@@ -44,7 +44,9 @@ const Sidebar = () => {
                     <div className="px-4">News/Interview</div>
                 </div>
             </div>
-            <div className="h-full w-6"></div>
+            <div className="relative cursor-pointer">
+                <div className="bg-blue-950 h-20 flex justify-end items-center absolute top-1/2 -translate-y-1/2"><FaCaretRight /></div>
+            </div>
         </aside>
     );
 };
