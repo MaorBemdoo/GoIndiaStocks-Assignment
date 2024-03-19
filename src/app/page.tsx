@@ -3,7 +3,7 @@ import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="max-w-full overflow-hidden flex">
       <Sidebar />
       <ResponsiveTab />
     </main>
