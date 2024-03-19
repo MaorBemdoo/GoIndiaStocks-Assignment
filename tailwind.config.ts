@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      desktop: {min: '566px'},
-      mobile: {max: '566px'},
+      desktop: {min: '655px'},
+      mobile: {max: '655px'},
     },
   },
   plugins: [require("daisyui")],

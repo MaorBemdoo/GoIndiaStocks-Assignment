@@ -23,7 +23,7 @@ const Sidebar = () => {
     }
 
     return (
-        <motion.aside className="bg-slate-300 h-screen text-white flex w-[30%]" initial={{x: "-95%"}} variants={{open: {x: 0}, close: {x: "-95%"}}} animate={controls}>
+        <motion.aside className="bg-slate-300 h-screen text-white flex w-[30%]" initial={{marginLeft: "-28.5%"}} variants={{open: {marginLeft: 0}, close: {marginLeft: "-28.5%"}}} animate={controls}>
             <div className="bg-blue-950 basis-[95%]">
                 <div className="flex justify-between items-center border-b border-slate-300 px-8 py-4">
                     <div className="flex items-center gap-3">
@@ -57,8 +57,8 @@ const Sidebar = () => {
                     <div className="px-4">News/Interview</div>
                 </div>
             </div>
-            <div className="relative cursor-pointer" onClick={moveFunc}>
-                <div className="bg-blue-950 h-20 flex justify-end items-center absolute top-1/2 -translate-y-1/2"><FaCaretRight /></div>
+            <div className="relative cursor-pointer basis-[5%]" onClick={moveFunc}>
+                <div className="bg-blue-950 h-20 w-full flex justify-end items-center absolute top-1/2 -translate-y-1/2"><FaCaretRight /></div>
             </div>
         </motion.aside>
     );

@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.responsive-tabs{
+    @apply w-full;
+}
+
+@media screen(desktop) {
+    body{
+        @apply overflow-hidden;
+    }
+    main{
+        @apply border border-t-slate-950;
+    }
+    .responsive-tabs{
+        @apply columns-2 gap-4 px-4 pt-2;
+    }
+    .responsive-tabs > input{
+        @apply text-red-700 text-2xl font-bold bg-slate-300 cursor-text !w-fit;
+    }
+}
