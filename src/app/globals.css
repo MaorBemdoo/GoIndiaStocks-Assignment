@@ -11,7 +11,7 @@
         @apply overflow-hidden;
     }
     main{
-        @apply border border-t-slate-950;
+        @apply border-t border-t-slate-950;
     }
     .responsive-tabs{
         @apply columns-2 gap-4 px-4 pt-2;
