@@ -35,7 +35,7 @@ const Sidebar = () => {
     }
 
     return (
-        <motion.aside ref={asideRef} className="mobile:fixed bg-slate-300 h-screen text-white flex min-w-[30%] mobile:min-w-[70%]" style={{marginLeft: `calc(${initialMargin}px + 1.5rem)`}} variants={{open: {marginLeft: 0}, close: {marginLeft: `calc(${initialMargin}px + 1.5rem)`}}} animate={controls}>
+        <motion.aside ref={asideRef} className="mobile:fixed bg-slate-300 h-screen text-white z-10 flex min-w-[30%] mobile:min-w-[70%]" style={{marginLeft: `calc(${initialMargin}px + 1.5rem)`}} variants={{open: {marginLeft: 0}, close: {marginLeft: `calc(${initialMargin}px + 1.5rem)`}}} animate={controls}>
             <div className="bg-blue-950 basis-[95%]">
                 <div className="flex justify-between items-center border-b border-slate-300 px-8 py-4">
                     <div className="flex items-center gap-3">
