@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const MarketStories = ({ marketStoriesData }: {marketStoriesData: MarketStoriesDataType[]}) => {
   const {data, isSuccess, isLoading, refetch} = useQuery({
-    queryKey: ["discussionForum"],
+    queryKey: ["marketStories"],
     queryFn: getMarketStoriesData,
     initialData: marketStoriesData
   })
