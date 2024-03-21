@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { ReactElement, ReactHTMLElement, useEffect, useRef, useState } from "react";
 import { BiSolidDollarCircle, BiSolidMessageDetail } from "react-icons/bi";
 import { FaCaretRight, FaUser } from "react-icons/fa6";
 import { IoIosNotifications } from "react-icons/io";
@@ -8,9 +8,21 @@ import { motion, useAnimationControls } from "framer-motion"
 
 const Sidebar = () => {
 
+    const asideRef = useRef(null)
     const [checkedId, setCheckedId] = useState("discussion-forum")
     const [sidebarOpen, setSidebarOpen] = useState(false)
+    const [initialMargin, setInitialMargin] = useState<null | number>(null);
     const controls = useAnimationControls()
+
+    useEffect(() => {
+        const asideWidth: number = (asideRef.current as unknown as HTMLElement).offsetWidth;
+        setInitialMargin(-asideWidth);
+
+        window.addEventListener("resize", () => {
+            console.log((asideRef.current as unknown as HTMLElement).offsetWidth)
+            setInitialMargin(-((asideRef.current as unknown as HTMLElement).offsetWidth))
+        })
+    }, [asideRef]);
 
     const moveFunc = () => {
         if(sidebarOpen){
@@ -23,7 +35,7 @@ const Sidebar = () => {
     }
 
     return (
-        <motion.aside className="mobile:fixed bg-slate-300 h-screen text-white flex w-[30%] z-10 mobile:w-[70%]" initial={{marginLeft: "-28.5%"}} variants={{open: {marginLeft: 0}, close: {marginLeft: "-28.5%"}}} animate={controls}>
+        <motion.aside ref={asideRef} className="mobile:fixed bg-slate-300 h-screen text-white flex min-w-[30%] mobile:min-w-[70%]" style={{marginLeft: `calc(${initialMargin}px + 1.5rem)`}} variants={{open: {marginLeft: 0}, close: {marginLeft: `calc(${initialMargin}px + 1.5rem)`}}} animate={controls}>
             <div className="bg-blue-950 basis-[95%]">
                 <div className="flex justify-between items-center border-b border-slate-300 px-8 py-4">
                     <div className="flex items-center gap-3">
@@ -57,7 +69,7 @@ const Sidebar = () => {
                     <div className="px-4">News/Interview</div>
                 </div>
             </div>
-            <div className="relative cursor-pointer basis-[5%]" onClick={moveFunc}>
+            <div className="relative cursor-pointer w-6" onClick={moveFunc}>
                 <div className="bg-blue-950 h-20 w-full flex justify-end items-center absolute top-1/2 -translate-y-1/2"><FaCaretRight /></div>
             </div>
         </motion.aside>
