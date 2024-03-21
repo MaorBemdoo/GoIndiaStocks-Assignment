@@ -1,18 +1,25 @@
-import { getDiscussionForumData } from "@/actions/getDiscusssionForumData"
+"use client"
+
+import { getDiscussionForumData } from "@/utils/getDiscusssionForumData"
+import { useQuery } from "@tanstack/react-query"
 import Image from "next/image"
 import { CgEye } from "react-icons/cg"
 import { FaRegHeart } from "react-icons/fa6"
 import { FiMessageSquare, FiShare2 } from "react-icons/fi"
 
-const DiscussionForum = async() => {
-
-  const data = await getDiscussionForumData()
+const DiscussionForum = ({ discussionForumData }: {discussionForumData: DiscussionForumDataType[]}) => {
+  
+  const {data, isSuccess, isLoading, refetch} = useQuery({
+    queryKey: ["discussionForum"],
+    queryFn: getDiscussionForumData,
+    initialData: discussionForumData
+  })
 
   return (
     <div>
       {
-        data.success ?
-          data.data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
+        isSuccess ?
+          data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
             <div className="p-2 flex justify-between gap-2">
               <Image src={image} alt={`${name} profile picture`} className="w-24 rounded-full"/>
               <div>
@@ -43,10 +50,12 @@ const DiscussionForum = async() => {
               <p className="text-blue-500">{time} min ago</p>
             </div>
           })
-        : 
+        : isLoading ? 
+        <div className="loading loading-spinner loading-lg"></div>
+        :
         <div className="text-2xl grid place-items-center text-center">
           An Error Occured
-          <button className="btn">Try Again</button>
+          <button className="btn" onClick={() => refetch()}>Try Again</button>
         </div>
       }
     </div>
