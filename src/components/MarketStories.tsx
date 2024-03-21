@@ -12,7 +12,7 @@ const MarketStories = ({ marketStoriesData }: {marketStoriesData: MarketStoriesD
   })
 
   return (
-    <div>
+    <div className="relative">
       {
         isSuccess ?
           data.map(({ image, title, content}: MarketStoriesDataType) => {

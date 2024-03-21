@@ -16,7 +16,7 @@ const DiscussionForum = ({ discussionForumData }: {discussionForumData: Discussi
   })
 
   return (
-    <div>
+    <div className="relative">
       {
         isSuccess ?
           data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
