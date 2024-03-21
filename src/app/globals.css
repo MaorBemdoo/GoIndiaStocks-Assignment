@@ -31,5 +31,13 @@
 }
 
 @media screen(mobile){
-    
+    .responsive-tabs{
+        @apply tabs tabs-boxed;
+    }
+    .responsive-tabs > input{
+        /* @apply ; */
+    }
+    .responsive-tabs > div{
+        @apply tab-content;
+    }
 }
