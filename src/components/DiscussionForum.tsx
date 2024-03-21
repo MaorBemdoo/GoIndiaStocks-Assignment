@@ -53,7 +53,7 @@ const DiscussionForum = ({ discussionForumData }: {discussionForumData: Discussi
         : isLoading ? 
         <div className="loading loading-spinner loading-lg"></div>
         :
-        <div className="text-2xl grid place-items-center text-center">
+        <div className="text-2xl grid justify-start text-center">
           An Error Occured
           <button className="btn" onClick={() => refetch()}>Try Again</button>
         </div>
