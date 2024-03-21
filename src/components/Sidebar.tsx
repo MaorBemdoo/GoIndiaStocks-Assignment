@@ -19,7 +19,7 @@ const Sidebar = () => {
         setInitialMargin(-asideWidth);
 
         window.addEventListener("resize", () => {
-            console.log((asideRef.current as unknown as HTMLElement).offsetWidth)
+            // console.log((asideRef.current as unknown as HTMLElement).offsetWidth)
             setInitialMargin(-((asideRef.current as unknown as HTMLElement).offsetWidth))
         })
     }, [asideRef]);
