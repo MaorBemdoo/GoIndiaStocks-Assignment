@@ -17,7 +17,7 @@
         @apply grid grid-cols-4 gap-4 pt-2 h-screen px-8;
     }
     .responsive-tabs > input{
-        @apply text-red-700 text-lg h-fit font-bold bg-slate-300 cursor-text !w-fit;
+        @apply text-red-700 uppercase text-lg h-fit font-bold bg-slate-300 cursor-text !w-fit;
     }
     .responsive-tabs > input:first-child{
         @apply text-2xl col-span-3;
@@ -35,7 +35,7 @@
         @apply tabs tabs-bordered;
     }
     .responsive-tabs input{
-        @apply bg-blue-950 text-white checked:bg-indigo-950 checked:border-red-900;
+        @apply bg-blue-950 capitalize text-white checked:bg-indigo-950 checked:border-red-900;
     }
     .responsive-tabs input::before{
         @apply content-[""] absolute w-1 h-[120%] z-[5] bg-slate-900;
