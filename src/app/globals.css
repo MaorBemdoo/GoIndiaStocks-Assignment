@@ -35,7 +35,7 @@
         @apply tabs tabs-bordered;
     }
     .responsive-tabs input{
-        @apply bg-blue-950 capitalize top-[2%] text-white checked:bg-indigo-950 checked:border-red-900 border-[2px];
+        @apply bg-blue-950 capitalize top-[2%] text-white checked:bg-indigo-950 checked:border-red-900 border-b-[2px];
     }
     .responsive-tabs input::before{
         @apply content-[""] absolute w-1 h-[120%] z-[5] bg-slate-900;
