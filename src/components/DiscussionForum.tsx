@@ -16,11 +16,11 @@ const DiscussionForum = ({ discussionForumData }: {discussionForumData: Discussi
   })
 
   return (
-    <div className="relative mobile:tab-content mobile:col-end-3 mobile:bg-base-100 mobile:border-base-300 mobile:rounded-box mobile:p-6" role="tabpanel">
+    <div className="relative w-full mobile:tab-content mobile:col-end-3 mobile:bg-base-100 mobile:border-base-300 mobile:rounded-box mobile:p-6" role="tabpanel">
       {
         isSuccess ?
           data.data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
-            <div className="p-2 flex justify-between gap-2">
+            <div className="p-2 flex justify-between gap-2 w-full">
               <Image src={image} alt={`${name} profile picture`} className="w-24 rounded-full"/>
               <div>
                 <div>
