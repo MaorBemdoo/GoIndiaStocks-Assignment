@@ -69,8 +69,8 @@ const Sidebar = () => {
                     <div className="px-4">News/Interview</div>
                 </div>
             </div>
-            <div className="relative cursor-pointer w-6" onClick={moveFunc}>
-                <div className="bg-blue-950 h-20 w-full flex justify-end items-center absolute top-1/2 -translate-y-1/2"><FaCaretRight /></div>
+            <div className="relative cursor-pointer w-6">
+                <div className="bg-blue-950 h-20 w-full flex justify-end items-center absolute top-1/2 -translate-y-1/2" onClick={moveFunc}><FaCaretRight /></div>
             </div>
         </motion.aside>
     );
