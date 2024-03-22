@@ -12,10 +12,10 @@ const MarketStories = ({ marketStoriesData }: {marketStoriesData: MarketStoriesD
   })
 
   return (
-    <div className="relative">
+    <div className="relative mobile:tab-content mobile:col-end-3 mobile:bg-base-100 mobile:border-base-300 mobile:rounded-box mobile:p-6" role="tabpanel">
       {
         isSuccess ?
-          data.map(({ image, title, content}: MarketStoriesDataType) => {
+          data.data.map(({ image, title, content}: MarketStoriesDataType) => {
             <div className="card">
               <figure><Image src={image} alt={`${title} image`}/></figure>
               <div className="card-body">

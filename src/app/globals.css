@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .responsive-tabs{
-    @apply w-full h-screen px-8;
+    @apply w-full px-8;
 }
 
 @media screen(desktop) {
@@ -14,7 +14,7 @@
         @apply border-t border-t-slate-950;
     }
     .responsive-tabs{
-        @apply grid grid-cols-4 gap-4 pt-2;
+        @apply grid grid-cols-4 gap-4 pt-2 h-screen;
     }
     .responsive-tabs > input{
         @apply text-red-700 text-lg h-fit font-bold bg-slate-300 cursor-text !w-fit;
@@ -32,12 +32,12 @@
 
 @media screen(mobile){
     .responsive-tabs{
-        @apply tabs tabs-boxed;
+        @apply tabs tabs-bordered;
     }
-    .responsive-tabs > input{
-        /* @apply ; */
+    .responsive-tabs input{
+        @apply bg-blue-950 text-white checked:bg-indigo-950 checked:border-red-900;
     }
     .responsive-tabs > div{
-        @apply tab-content;
+        @apply border-0;
     }
 }

@@ -16,10 +16,10 @@ const DiscussionForum = ({ discussionForumData }: {discussionForumData: Discussi
   })
 
   return (
-    <div className="relative">
+    <div className="relative mobile:tab-content mobile:col-end-3 mobile:bg-base-100 mobile:border-base-300 mobile:rounded-box mobile:p-6" role="tabpanel">
       {
         isSuccess ?
-          data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
+          data.data.map(({ name, image, time, sector, content, stats }: DiscussionForumDataType) => {
             <div className="p-2 flex justify-between gap-2">
               <Image src={image} alt={`${name} profile picture`} className="w-24 rounded-full"/>
               <div>
@@ -53,7 +53,7 @@ const DiscussionForum = ({ discussionForumData }: {discussionForumData: Discussi
         : isLoading ? 
         <div className="loading loading-spinner loading-lg"></div>
         :
-        <div className="text-2xl grid justify-start text-center">
+        <div className="text-2xl grid desktop:justify-start mobile:place-items-center text-center">
           An Error Occured
           <button className="btn" onClick={() => refetch()}>Try Again</button>
         </div>
