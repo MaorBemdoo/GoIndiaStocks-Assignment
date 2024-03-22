@@ -10,10 +10,10 @@ const ResponsiveTab = async() => {
 
     return (
         <div role="tablist" className="responsive-tabs">
-            <input type="radio" name="tab" role="tab" className="tab uppercase" aria-label="Discussion Forum" defaultChecked/>
+            <input type="radio" name="tab" role="tab" className="tab uppercase mobile:before:left-0" aria-label="Discussion Forum" defaultChecked/>
             <DiscussionForum discussionForumData={discussionForumData}/>
 
-            <input type="radio" name="tab" role="tab" className="tab uppercase" aria-label="Market Stories" />
+            <input type="radio" name="tab" role="tab" className="tab uppercase mobile:before:right-0" aria-label="Market Stories" />
             <MarketStories marketStoriesData={marketStoriesData}/>
         </div>
     )

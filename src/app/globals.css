@@ -37,6 +37,9 @@
     .responsive-tabs input{
         @apply bg-blue-950 text-white checked:bg-indigo-950 checked:border-red-900;
     }
+    .responsive-tabs input::before{
+        @apply content-[""] absolute w-1 h-[120%] z-[5] bg-slate-900;
+    }
     .responsive-tabs > div{
         @apply border-0;
     }
